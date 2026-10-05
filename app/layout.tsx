@@ -12,12 +12,12 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3200'),
-  title: 'Mahalle · Halı saha maçların Maçkolik’te',
+  title: 'Mahalle · Halı saha maçların Mackolik’te',
   description:
-    'Mahalle, halı saha maçlarını skoru, kadrosu ve gol videolarıyla Maçkolik’e taşır. Halı saha işletmeleri tesislerini buradan Mahalle’ye ekleyebilir.',
+    'Mahalle, halı saha maçlarını skoru, kadrosu ve gol videolarıyla Mackolik’e taşır. Halı saha işletmeleri tesislerini buradan Mahalle’ye ekleyebilir.',
   openGraph: {
-    title: 'Mahalle · Halı saha maçların Maçkolik’te',
-    description: 'Halı sahanı Mahalle’ye ekle; maçlar, kadrolar ve gol videoları Maçkolik’te.',
+    title: 'Mahalle · Halı saha maçların Mackolik’te',
+    description: 'Halı sahanı Mahalle’ye ekle; maçlar, kadrolar ve gol videoları Mackolik’te.',
     images: ['/media/hero-poster.jpg'],
     locale: 'tr_TR',
     type: 'website',

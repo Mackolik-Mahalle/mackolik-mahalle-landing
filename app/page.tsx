@@ -16,12 +16,12 @@ const NAV = [
 
 const FEATURES = [
   {
-    img: 'frame-1202-540', title: 'Oyuncu Profili Oluştur',
-    text: 'Maçlara katılmak için oyuncu profilini oluştur, gollerini, asistlerini ve kartlarını maç maç takip et.',
+    img: 'frame-1202-540', title: 'Oyuncu profilini oluştur',
+    text: 'Oyuncu profilini oluştur; maçlarını, gollerini, asistlerini ve kartlarını tek bir yerde takip et.',
   },
   {
-    img: 'frame-1205-300', title: 'Takım Oluştur',
-    text: 'Arkadaşlarını davet et, kendi takımını kur ve halı saha maçlarında birlikte mücadele et.',
+    img: 'frame-1205-300', title: 'Takımını kur',
+    text: 'Arkadaşlarını davet et, takımını kur ve Mahalle’de birlikte sahaya çıkın.',
   },
   {
     img: 'frame-1206-120', title: 'Lig Oluştur',
@@ -30,29 +30,28 @@ const FEATURES = [
 ]
 
 const VENUE_POINTS = [
-  ['Maçkolik’te görünür ol', 'Tesisin, Mahalle kullanıcılarının maç kurarken ve rakip ararken seçtiği sahalar arasına girer.'],
-  ['Maçlar kayda geçer', 'Sahanda oynanan maçlar skoru, kadrosu ve istatistikleriyle Mahalle’de yayınlanır.'],
-  ['Videolar oyuncuya ulaşır', 'Kamera sistemi olan sahalarda gol videoları oyuncuların profiline ve maç sayfasına düşer.'],
-  ['Lig ve turnuva düzenle', 'Sahanda organize ettiğin lig ve turnuvaların fikstürü ile puan durumu Mahalle üzerinden yürür.'],
+  ['Mackolik’te görünür ol', 'Tesisin, Mahalle’de maç kuran ve rakip arayan oyuncuların seçebileceği sahalar arasına girsin.'],
+  ['Maçlar kayda geçer', 'Sahanda oynanan maçlar skorları, kadroları ve istatistikleriyle Mahalle’de yerini alsın.'],
+  ['Videolar oyuncuya ulaşır', 'Kamera sistemi olan sahalarda gol videoları maç sayfasına ve oyuncuların profillerine otomatik olarak ulaşsın.'],
+  ['Lig ve turnuva düzenle', 'Lig ve turnuvalarını Mahalle üzerinden yönet; fikstürü oluştur, puan durumunu herkes takip etsin.'],
 ]
 
 const FAQ = [
-  ['Başvurudan sonra ne oluyor?', 'Başvurunuz Mahalle ekibinin inceleme kuyruğuna düşer. Bilgiler doğrulandıktan sonra tesisiniz ve sahalarınız Mahalle’de yayına alınır; gerekirse sizi verdiğiniz telefondan ararız.'],
-  ['Birden fazla sahamız var, ayrı ayrı mı başvurmalıyız?', 'Hayır. Tek başvuruda tesisinizdeki sahaları (en fazla 20) zemin, ölçü, kapalı alan ve ışıklandırma bilgileriyle birlikte ekleyebilirsiniz.'],
-  ['İletişim bilgilerim sitede görünür mü?', 'Hayır. Yetkili adı, telefon ve e-posta yalnızca başvurunun değerlendirilmesi için saklanır; tesis sayfasında yer almaz.'],
-  ['Aynı telefonla tekrar başvurabilir miyim?', 'Bekleyen başvurunuz varken aynı numarayla en fazla üç başvuru açılabilir. Bilgilerinizi güncellemek isterseniz yeni başvuru yerine notlar kısmını kullanın ya da ekibimizin aramasını bekleyin.'],
+  ['Başvurudan sonra ne oluyor?', 'Başvurunuz Mahalle ekibine ulaşır. Bilgileriniz kontrol edildikten sonra tesisiniz ve sahalarınız Mahalle’de yayına alınır. Ek bilgiye ihtiyaç duyarsak sizi telefonla ararız.'],
+  ['Birden fazla sahamız var, ayrı ayrı mı başvurmalıyız?', 'Hayır. Tek başvuruda tesisinizdeki saha sayısını (20’ye kadar) belirtmeniz yeterli. Sahaların zemin, ölçü, kapalı alan ve ışıklandırma bilgilerini ekibimiz sizinle görüşürken alır.'],
+  ['İletişim bilgilerim sitede görünür mü?', 'Hayır. Yetkili adı ve telefon numarası yalnızca başvurunun değerlendirilmesi amacıyla kullanılır; tesis sayfasında yayımlanmaz.'],
+  ['Aynı telefonla tekrar başvurabilir miyim?', 'Bekleyen bir başvurunuz varken aynı telefon numarasıyla en fazla üç başvuru oluşturabilirsiniz. Mevcut başvurunuzdaki bilgileri güncellemek istiyorsanız yeni başvuru oluşturmak yerine ekibimizin sizinle iletişime geçmesini bekleyebilirsiniz.'],
 ]
 
-type Lookups = { provinces: Province[]; districts: District[]; amenities: string[] }
+type Lookups = { provinces: Province[]; districts: District[] }
 
 async function lookups(): Promise<Lookups> {
-  const [provinces, districts, amenities] = await Promise.all([
+  const [provinces, districts] = await Promise.all([
     select<Province>('turkish_provinces?select=id,name&order=code'),
     // ~970 rows, filtered in the browser: cheaper than a round trip per province pick.
     select<District>('turkish_districts?select=id,name,province_id&order=name&limit=2000'),
-    select<{ code: string }>('venue_amenities?select=code'),
   ])
-  return { provinces, districts, amenities: amenities.map((a) => a.code) }
+  return { provinces, districts }
 }
 
 export default async function Home() {
@@ -74,11 +73,11 @@ export default async function Home() {
         </div>
         <div className="wrap hero-main">
           <div className="hero-copy">
-            <span className="kicker">Maçkolik’te yeni</span>
-            <h1>Halı saha maçın, <em>Maçkolik’te.</em></h1>
+            <span className="kicker">Mackolik’te yeni</span>
+            <h1>Halı saha maçın, <em>Mackolik’te.</em></h1>
             <p>
-              Mahalle, halı sahada oynadığın maçları skoru, kadrosu ve gol videolarıyla Maçkolik’e taşır.
-              Profilini oluştur, takımını kur, ligini yönet.
+              Skoru, kadrosu, istatistikleri ve gol videolarıyla artık senin maçın da Mackolik’te.
+              Profilini oluştur, takımını kur, sahaya çık.
             </p>
             <div className="hero-cta">
               <a href="#basvuru" className="pill">Halı sahanı Mahalle’ye ekle</a>
@@ -102,7 +101,7 @@ export default async function Home() {
         <section id="uygulama" className="section wrap">
           <div className="section-head">
             <h2>Profesyonel maç sayfası, senin maçın için</h2>
-            <p>Mahalle, Maçkolik uygulamasının içinde çalışır. Aynı ekranlar, aynı alışkanlıklar; sadece sahada sen varsın.</p>
+            <p>Mahalle, Mackolik uygulamasının içinde çalışır. Aynı ekranlar, aynı alışkanlıklar; sadece sahada sen varsın.</p>
           </div>
           <Showcase />
         </section>
@@ -110,8 +109,8 @@ export default async function Home() {
         <section id="ozellikler" className="section section--tint">
           <div className="wrap">
             <div className="section-head">
-              <h2>Halı saha deneyimini bir üst seviyeye taşı</h2>
-              <p>Oyuncu profilini oluştur, takımını kur ve kendi ligini yöneterek rekabetinde yıldız ol.</p>
+              <h2>Halı saha maçını bir üst seviyeye taşı</h2>
+              <p>Oyuncu profilini oluştur, takımını kur, sahaya çık. Her maçta yeni bir hikâye, her maçta yeni bir rekabet.</p>
             </div>
             <div className="adv">
               {FEATURES.map((f, i) => (
@@ -128,7 +127,7 @@ export default async function Home() {
         <section id="sahalar" className="venues">
           <div className="wrap">
             <span className="kicker">Halı saha işletmeleri için</span>
-            <h2>Sahan Mahalle’de, maçların Maçkolik’te</h2>
+            <h2>Sahan Mahalle’de, maçların Mackolik’te</h2>
             <dl className="venue-points">
               {VENUE_POINTS.map(([t, d], i) => (
                 <div key={t}>
@@ -142,12 +141,12 @@ export default async function Home() {
 
         <section id="basvuru" className="section wrap apply">
           <aside className="apply-side">
-            <h2>Halı saha başvurusu</h2>
-            <p>Tesisinizi Mahalle’ye eklemek için formu doldurun. Başvurunuz ekibimiz tarafından incelendikten sonra yayına alınır.</p>
+            <h2>Halı sahanı Mahalle’ye ekle</h2>
+            <p>Tesisinizi Mahalle’ye eklemek için formu doldurun. Ekibimiz başvurunuzu inceleyip gerekli kontrollerin ardından tesisinizi yayına alsın.</p>
             <ol className="steps">
-              <li><b>Formu gönderin</b><span>Tesis, saha ve yetkili bilgileri.</span></li>
-              <li><b>Ekibimiz inceler</b><span>Gerekirse telefonla size ulaşırız.</span></li>
-              <li><b>Sahanız yayında</b><span>Oyuncular maç kurarken tesisinizi seçebilir.</span></li>
+              <li><b>Formu gönderin.</b><span>Tesis, saha ve yetkili bilgilerinizi paylaşın.</span></li>
+              <li><b>Ekibimiz incelesin.</b><span>Gerekirse sizi telefonla arayalım.</span></li>
+              <li><b>Sahanız Mahalle’de.</b><span>Oyuncular maç kurarken tesisinizi seçebilsin.</span></li>
             </ol>
           </aside>
           <ApplicationForm {...data} />
@@ -169,7 +168,7 @@ export default async function Home() {
       <footer className="footer">
         <div className="wrap footer-in">
           <MackolikLogo className="footer-mk" />
-          <p>Mahalle bir Maçkolik ürünüdür. © {new Date().getFullYear()} Maçkolik</p>
+          <p>Mahalle bir Mackolik ürünüdür. © {new Date().getFullYear()} Mackolik</p>
         </div>
       </footer>
     </>

@@ -6,7 +6,7 @@ const TABS = [
   {
     id: 'detay', label: 'Maç Detayı',
     title: 'Maçın her anı, dakika dakika',
-    text: 'Skor, goller, asistler, kartlar ve oyuncu değişiklikleri Maçkolik’in maç detay sayfasında. Süper Lig maçına baktığın ekran artık perşembe akşamı oynadığın maç için de açık.',
+    text: 'Goller, asistler, kartlar ve oyuncu değişiklikleri dakika dakika karşında. Mackolik’te Süper Lig maçlarını nasıl takip ediyorsan, artık kendi maçını da öyle takip et.',
     screen: <img src="/media/screen-match.jpg" alt="Mahalle maç detay ekranı: Sarıyer FC 3-0 Veltron" />,
   },
   {

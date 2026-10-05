@@ -10,7 +10,7 @@ pnpm dev
 
 - **Başvurular** `public.submit_venue_application` RPC'sine gider (backend deposu,
   `20260924120000_venue_applications.sql`). Moderasyon admin panelinde, `/moderation/sahalar`.
-- **Tasarım** Maçkolik Figma dosyası (`ZkjxgbSQvdrbwz2AHl3hfL`) ve Android uygulamasının
+- **Tasarım** Mackolik Figma dosyası (`ZkjxgbSQvdrbwz2AHl3hfL`) ve Android uygulamasının
   `ui/theme/Color.kt` token'larıyla birebir: Roboto, `#3866b0` / `#1c90f0`, 10px kart, yuvarlak hap.
 - **Görseller** `public/media/`: Figma'dan 3x alınmış ekranlar (`screen-*.jpg`) ve
   veritabanındaki `video_items` kayıtlarıyla aynı Sporyo maç kayıtlarından çekilmiş
