@@ -179,9 +179,14 @@ p { margin: 0; text-wrap: pretty; }
 .step h3 { font-size: 20px; font-weight: 700; margin: 10px 0 6px; }
 .step p { font-size: 15px; color: var(--muted); }
 @media (min-width: 640px) {
-  .journey { grid-template-columns: 1fr 1fr; gap: 48px 32px; }
-  .step { grid-template-columns: 1fr; gap: 20px; }
-  .step .phone { width: 78%; max-width: 230px; padding: 6px; border-radius: 30px; }
+  /* Row spacing lives on the last row of each card: a container row-gap would leak into the subgrid rows */
+  .journey { grid-template-columns: 1fr 1fr; gap: 0 32px; }
+  .step p { margin-bottom: 48px; }
+  /* Phone, badge, title and text are four shared rows, so every card in a row lines up */
+  .step { grid-template-columns: 1fr; grid-row: span 4; grid-template-rows: subgrid; row-gap: 0; align-items: start; }
+  .step > div:last-child { display: contents; }
+  .step-no { justify-self: start; }
+  .step .phone { width: 78%; max-width: 230px; padding: 6px; border-radius: 30px; margin-bottom: 20px; }
   .step .screen { border-radius: 24px; }
 }
 @media (min-width: 1000px) { .journey { grid-template-columns: repeat(4, 1fr); } }
