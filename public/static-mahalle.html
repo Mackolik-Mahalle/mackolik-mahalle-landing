@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mahalle · Halı saha maçların Mackolik’te</title>
-<meta name="description" content="Mahalle, halı saha maçlarını skoru, kadrosu ve gol videolarıyla Mackolik’e taşır. Halı saha işletmeleri tesislerini ücretsiz başvuruyla ekleyebilir.">
+<meta name="description" content="Mahalle, halı sahada oynadığın maçları detaylı istatistikler ve özel videolar ile birlikte Mackolik’e taşır ve milyonlarca futbolsevere ulaştırır.">
 <link rel="canonical" href="https://www.mackolik.com/static-mahalle.html">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0b2752">
@@ -13,14 +13,14 @@
 <meta property="og:locale" content="tr_TR">
 <meta property="og:url" content="https://www.mackolik.com/static-mahalle.html">
 <meta property="og:title" content="Mahalle · Halı saha maçların Mackolik’te">
-<meta property="og:description" content="Halı sahanı Mahalle’ye ekle; maçlar, kadrolar ve gol videoları Mackolik’te.">
+<meta property="og:description" content="Mahalle, halı sahada oynadığın maçları detaylı istatistikler ve özel videolar ile birlikte Mackolik’e taşır ve milyonlarca futbolsevere ulaştırır.">
 <meta property="og:image" content="https://www.mackolik.com/static-files/mahalle/media/hero-poster.jpg">
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
 <meta property="og:image:alt" content="Mahalle’ye bağlı bir halı sahada oynanan maçtan kare">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Mahalle · Halı saha maçların Mackolik’te">
-<meta name="twitter:description" content="Halı sahanı Mahalle’ye ekle; maçlar, kadrolar ve gol videoları Mackolik’te.">
+<meta name="twitter:description" content="Mahalle, halı sahada oynadığın maçları detaylı istatistikler ve özel videolar ile birlikte Mackolik’e taşır ve milyonlarca futbolsevere ulaştırır.">
 <meta name="twitter:image" content="https://www.mackolik.com/static-files/mahalle/media/hero-poster.jpg">
 <link rel="icon" href="https://www.mackolik.com/static-files/mahalle/media/mahalle-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +42,7 @@
       "@id": "https://www.mackolik.com/static-mahalle.html#webpage",
       "url": "https://www.mackolik.com/static-mahalle.html",
       "name": "Mahalle · Halı saha maçların Mackolik’te",
-      "description": "Mahalle, halı saha maçlarını skoru, kadrosu, gol videoları ve istatistikleriyle Mackolik’e taşır.",
+      "description": "Mahalle, halı sahada oynadığın maçları detaylı istatistikler ve özel videolar ile birlikte Mackolik’e taşır ve milyonlarca futbolsevere ulaştırır.",
       "inLanguage": "tr-TR",
       "publisher": { "@id": "https://www.mackolik.com/#organization" },
       "primaryImageOfPage": "https://www.mackolik.com/static-files/mahalle/media/hero-poster.jpg"
@@ -100,10 +100,11 @@ p { margin: 0; }
 @media (prefers-reduced-motion: reduce) { .hero-video { display: none; } }
 .topbar { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 .brand { display: flex; align-items: center; gap: 14px; color: #fff; text-decoration: none; }
-.brand svg { width: 112px; height: auto; }
-.brand i { width: 1px; height: 26px; background: rgba(255,255,255,.3); }
-.brand img { width: 46px; height: auto; }
-.hero-grid { display: grid; gap: 40px; align-items: center; padding-top: 40px; padding-bottom: 56px; }
+/* The combined logo is drawn for light backgrounds: hang it from the top edge on a white tab. */
+.brand { align-self: flex-start; padding: 10px 14px 12px; background: #fff; border-radius: 0 0 16px 16px; box-shadow: 0 10px 24px -12px rgba(0,0,0,.5); }
+.brand img { width: auto; height: 60px; }
+@media (min-width: 760px) { .brand img { height: 72px; } .brand { padding: 12px 18px 14px; } }
+.hero-grid { display: grid; gap: 40px; align-items: center; padding-top: 56px; padding-bottom: 56px; }
 .hero h1 { color: #fff; font-size: clamp(40px, 6.4vw, 68px); font-weight: 900; margin: 14px 0 20px; letter-spacing: -.02em; }
 .hero h1 span { display: block; font-style: italic; color: var(--sky); }
 .hero .kicker { color: var(--sky); }
@@ -112,7 +113,7 @@ p { margin: 0; }
 .hero-phone { display: none; }
 .hero-credit { padding-bottom: 18px; font-size: 12px; color: rgba(255,255,255,.55); }
 @media (min-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr 300px; padding-top: 48px; padding-bottom: 72px; }
+  .hero-grid { grid-template-columns: 1fr 300px; padding-top: 56px; padding-bottom: 72px; }
   .hero-phone { display: block; }
 }
 
@@ -154,7 +155,6 @@ p { margin: 0; }
   .step .screen { border-radius: 24px; }
 }
 @media (min-width: 1000px) { .journey { grid-template-columns: repeat(4, 1fr); } }
-.step--timeline .screen img { margin-top: -62%; }
 
 .closer {
   display: grid; gap: 20px; align-items: center; margin-top: 64px; padding: 32px; border-radius: 20px;
@@ -264,24 +264,20 @@ p { margin: 0; }
 <header class="hero">
   <video class="hero-video" src="https://www.mackolik.com/static-files/mahalle/media/hero.mp4" poster="https://www.mackolik.com/static-files/mahalle/media/hero-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
   <div class="wrap topbar">
-    <a href="https://www.mackolik.com/" class="brand" aria-label="Mackolik ana sayfa">
-      <svg viewBox="0 0 110 20" aria-hidden="true"><use href="#mk"/></svg>
-      <i></i>
-      <img src="https://www.mackolik.com/static-files/mahalle/media/mahalle-logo.png" width="341" height="240" alt="Mahalle">
-    </a>
+    <a href="https://www.mackolik.com/" class="brand"><img src="https://www.mackolik.com/static-files/mahalle/media/mackolik-mahalle-logo.svg" width="295" height="227" alt="Mackolik Mahalle"></a>
     <a href="#basvuru" class="btn btn--line btn--sm">Sahanı ekle</a>
   </div>
   <div class="wrap hero-grid">
     <div>
       <span class="kicker">Mackolik’te yeni</span>
       <h1>Halı saha maçın, <span>Mackolik’te.</span></h1>
-      <p class="hero-lead">Skoru, kadrosu, istatistikleri ve gol videolarıyla artık senin maçın da Mackolik’te. Profilini oluştur, takımını kur, sahaya çık.</p>
+      <p class="hero-lead">Mahalle, halı sahada oynadığın maçları detaylı istatistikler ve özel videolar ile birlikte Mackolik’e taşır ve milyonlarca futbolsevere ulaştırır.</p>
       <div class="hero-cta">
         <a href="#basvuru" class="btn">Halı sahanı Mahalle’ye ekle</a>
         <a href="#yolculuk" class="btn btn--line">Nasıl çalışır?</a>
       </div>
     </div>
-    <div class="hero-phone phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/screen-match.jpg" width="750" height="1946" alt="Mackolik uygulamasında Mahalle maç detay ekranı: Sarıyer FC 3-0 Veltron, maç videosu ve olaylar"></div></div>
+    <div class="hero-phone phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/step-06-analiz.jpg" width="750" height="1946" alt="Mackolik uygulamasında analiz edilmiş Mahalle maçı: Sarıyer FC 3-0 Veltron, maç videosu ve olay akışı"></div></div>
   </div>
   <p class="wrap hero-credit">Görüntüler: Mahalle’ye bağlı bir halı sahanın maç kaydı.</p>
 </header>
@@ -304,47 +300,47 @@ p { margin: 0; }
     <div class="wrap">
       <div class="head">
         <span class="kicker">Uygulama</span>
-        <h2 id="yolculuk-h">Bir maçın Mahalle’deki yolculuğu</h2>
-        <p>Mahalle, Mackolik uygulamasının içinde çalışır. Düdükten oyuncu profiline kadar bir halı saha maçının geçtiği sekiz durağa göz at.</p>
+        <h2 id="yolculuk-h">Bir maçın, Mahalle yolculuğu</h2>
+        <p>Mahalle, Mackolik’in yeni özelliği. Uygulamanın içinde yer alır. Halı saha maçının Mahalle’de nasıl bir yolculuğa dönüştüğüne birlikte bakalım.</p>
       </div>
       <ol class="journey">
         <li class="step">
-          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/screen-match.jpg" width="750" height="1946" loading="lazy" alt="Maç detay ekranı: maç videosu ve skor, Sarıyer FC 3-0 Veltron"></div></div>
-          <div><span class="step-no">01 · Kayıt</span><h3>Düdük çaldı, kamera kayıtta.</h3><p>Çarşamba akşamı, saat 20.00. Sarıyer Merkez Halı Saha. Düdük çalar, kamera kayda girer. Maç baştan sona kaydedilir; skor ve maçın önemli anları Mahalle’ye aktarılır.</p></div>
+          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/step-01-profil.jpg" width="750" height="1648" loading="lazy" alt="Oyuncu profili ekranı: forma numarası, mevki ve kişisel bilgiler"></div></div>
+          <div><span class="step-no">01 · Profil</span><h3>Sahne senin, kendini göster.</h3><p>Mackolik uygulamasında profilini oluşturduğunda Mahalle dünyasındaki yerini alırsın. Takımını kurduğunda veya başka bir takıma katıldığında kendini maçlarda göstermeye hazırsın.</p></div>
         </li>
         <li class="step">
-          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/screen-find.jpg" width="750" height="1346" loading="lazy" alt="Maç bulma ekranı: il, ilçe, tesis, saha, tarih ve saat seçimi"></div></div>
-          <div><span class="step-no">02 · Maç bul</span><h3>Maçını bul.</h3><p>Maçtan sonra il, ilçe, tesis, saha, tarih ve saati seç. O sahada, o saatte oynadığın maç karşında.</p></div>
+          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/step-02-kayit.jpg" width="750" height="1306" loading="lazy" alt="Maç sayfası: tesis kamerasının kaydettiği maç videosu ve maç bilgisi"></div></div>
+          <div><span class="step-no">02 · Kayıt</span><h3>Düdük çaldı, kamera kayıtta.</h3><p>Mahalle ile anlaşmalı tesislerde kamera sistemi maçı baştan sona kaydeder. Son düdükten sonra maç, videosuyla birlikte Mahalle’ye eklenir.</p></div>
         </li>
         <li class="step">
-          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/screen-claim.jpg" width="750" height="1306" loading="lazy" alt="Sahipsiz maç ekranı: iki takım için Takımı Sahiplen düğmeleri"></div></div>
-          <div><span class="step-no">03 · Sahiplen</span><h3>Takımını sahiplen.</h3><p>Maçını bulduğunda sıra takımında. “Takımı Sahiplen”e dokun; maç takımının sayfasına, oyuncular da kendi profillerine kavuşsun.</p></div>
-        </li>
-        <li class="step step--timeline">
-          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/screen-match.jpg" width="750" height="1946" loading="lazy" alt="Maç detay ekranı: gol, kart ve oyuncu değişikliklerinin zaman çizelgesi"></div></div>
-          <div><span class="step-no">04 · Maç detayı</span><h3>Dakika dakika.</h3><p>Goller, asistler, kartlar ve oyuncu değişiklikleri dakika dakika karşında. Mackolik’te Süper Lig maçlarını nasıl takip ediyorsan, artık kendi maçını da öyle takip et.</p></div>
+          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/step-03-mac-bul.jpg" width="750" height="1334" loading="lazy" alt="Maçını Bul ekranı: il, ilçe, tesis, saha, tarih ve saat seçimi ile maç listesi"></div></div>
+          <div><span class="step-no">03 · Maç bul</span><h3>Maçını bul.</h3><p>Karşılaşma bittikten sonra Mackolik uygulamasında Maçını Bul ekranında arama yaptığında, oynadığın maç karşına gelir.</p></div>
         </li>
         <li class="step">
-          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/screen-squad.jpg" width="750" height="1968" loading="lazy" alt="Maç kadrosu ekranı: saha fotoğrafında numaralı oyuncular ve kadro listesi"></div></div>
-          <div><span class="step-no">05 · Kadro</span><h3>Kadro sahada.</h3><p>Kim, nerede oynadı? Kadronu sahadaki yerleşimi ve forma numaralarıyla gör. Rakibin kadrosu da bir dokunuş uzağında.</p></div>
+          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/step-04-sahiplen.jpg" width="750" height="1306" loading="lazy" alt="Takımını Seç penceresi: sahipsiz maçta takım sahiplenme"></div></div>
+          <div><span class="step-no">04 · Sahiplen</span><h3>Takımını sahiplen.</h3><p>Oynadığın maçta takımlar henüz sahipsiz. Takım kaptanları takımlarını sahiplendiğinde karşılaşma Mackolik’te yayınlanır.</p></div>
         </li>
         <li class="step">
-          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/screen-videos.jpg" width="750" height="1656" loading="lazy" alt="Maç videoları ekranı: maçın tamamı ve oyuncu klipleri"></div></div>
-          <div><span class="step-no">06 · Videolar</span><h3>Golün videosu cebinde.</h3><p>Maçın tamamını izle ya da oyuncuların kliplerine tek tek göz at. Attığın gol artık sadece hafızanda değil, telefonunda.</p></div>
+          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/step-05-kadro.jpg" width="750" height="1968" loading="lazy" alt="Kadro sekmesi: saha fotoğrafında numaralı oyuncular ve kadro listesi"></div></div>
+          <div><span class="step-no">05 · Kadro</span><h3>Kadronu tanımla.</h3><p>Takım kaptanları, maçta oynayan futbolcuları Kadro sekmesine eklediğinde, karşılaşma bu oyuncuların profillerine işlenir.</p></div>
         </li>
         <li class="step">
-          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/screen-stats.jpg" width="750" height="2534" loading="lazy" alt="Maç istatistikleri ekranı: iki takımın karşılaştırmalı istatistikleri"></div></div>
-          <div><span class="step-no">07 · İstatistik</span><h3>Maç, sayılarla.</h3><p>Topla oynama, şutlar, paslar, ikili mücadeleler, savunma… İki takımın performansı yan yana. Maç sonrası tartışmayı artık veriler bitirsin.</p></div>
+          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/step-06-analiz.jpg" width="750" height="1946" loading="lazy" alt="Analiz edilmiş maç sayfası: goller, kartlar ve oyuncu değişiklikleri"></div></div>
+          <div><span class="step-no">06 · Analiz</span><h3>Maçı analiz ettir.</h3><p>En heyecanlı yere geldik… Maç analiz ettirildiğinde tüm detaylar ortaya çıkar. Halı saha maçın, profesyonel bir maç deneyimine dönüşür.</p></div>
         </li>
         <li class="step">
-          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/screen-profile.jpg" width="750" height="1648" loading="lazy" alt="Oyuncu profili ekranı: forma numarası, mevki ve kişisel bilgiler"></div></div>
-          <div><span class="step-no">08 · Profil</span><h3>Maç bitti, sen kaldın.</h3><p>Forma numaran, mevkin, kullandığın ayak, maçların ve istatistiklerin tek bir profilde. Oynadığın her maç, profiline yeni bir şey ekler.</p></div>
+          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/step-07-istatistik.jpg" width="750" height="1550" loading="lazy" alt="İstatistik sekmesi: topla oynama, şut ve pas istatistiklerinin takım karşılaştırması"></div></div>
+          <div><span class="step-no">07 · İstatistik</span><h3>Ayrıntılı istatistikler.</h3><p>Topa kim daha fazla sahip oldu, kim daha çok pas yaptı, kim daha fazla şut çekti? Takımların ve oyuncuların hücumdan savunmaya tüm performansı analiz sonrasında detaylı istatistiklerle ortaya konur.</p></div>
+        </li>
+        <li class="step">
+          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/step-08-videolar.jpg" width="750" height="1656" loading="lazy" alt="Videolar sekmesi: maç videosu ve oyunculara özel performans klipleri"></div></div>
+          <div><span class="step-no">08 · Videolar</span><h3>Maça özel videolar.</h3><p>Asıl video şöleni maç analiz edildiğinde başlar. Maç özeti ve gol videolarının yanı sıra, her oyuncunun maçta topla oynadığı bölümlerden oluşan bireysel performans klipleri maç sayfasına eklenir.</p></div>
         </li>
       </ol>
       <div class="closer">
         <div>
-          <h3>Bu maç bir halı sahada oynandı. Seninki de Mahalle’de olsun.</h3>
-          <p>Tesisini Mahalle’ye ekle; sahanda oynanan her maç Mackolik’te kendi sayfasına kavuşsun.</p>
+          <h3>Halı saha işletiyorsan, seni de Mahalle’ye bekliyoruz.</h3>
+          <p>Tesisine kamera sistemi kuralım; sahanda oynanan maçlar Mackolik’te yayınlansın. Tesisin, sahaların ve maçların milyonlarca Mackolik kullanıcısına ulaşsın.</p>
         </div>
         <a href="#basvuru" class="btn">Halı sahanı Mahalle’ye ekle</a>
       </div>
@@ -355,17 +351,17 @@ p { margin: 0; }
     <div class="wrap">
       <div class="head">
         <span class="kicker">Oyuncular için</span>
-        <h2 id="ozellikler-h">Halı saha maçını bir üst seviyeye taşı</h2>
-        <p>Oyuncu profilini oluştur, takımını kur, sahaya çık. Her maçta yeni bir hikâye, her maçta yeni bir rekabet.</p>
+        <h2 id="ozellikler-h">Halı saha deneyimini üst seviyeye taşı</h2>
+        <p>Oyuncu profilini oluştur, takımını kur ve Mahalle dünyasına adımını at.</p>
       </div>
       <div class="features">
         <article class="feature feature--profile">
-          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/screen-profile-matches.jpg" width="750" height="1647" loading="lazy" alt="Oyuncu profili, Maçlar sekmesi: turnuvadaki maçlar, goller, asistler ve kartlar"></div></div>
-          <div class="feature-copy"><h3>Oyuncu profilini oluştur</h3><p>Oyuncu profilini oluştur; maçlarını, gollerini, asistlerini ve kartlarını tek bir yerde takip et.</p></div>
+          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/feature-profil.jpg" width="750" height="1648" loading="lazy" alt="Oyuncu profili ekranı: Mahalle oyuncusunun forma numarası, mevki ve kişisel bilgileri"></div></div>
+          <div class="feature-copy"><h3>Profil oluştur</h3><p>Oyuncu profilini oluştur ve Mackolik’te futbolcu olarak yerini al. Oynadığın maçlar ve performansın profiline işlensin.</p></div>
         </article>
         <article class="feature feature--team">
-          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/screen-team-squad.jpg" width="750" height="1678" loading="lazy" alt="Takım sayfası, Kadro sekmesi: mevkilere göre oyuncular ve sezon istatistikleri"></div></div>
-          <div class="feature-copy"><h3>Takımını kur</h3><p>Arkadaşlarını davet et, takımını kur ve Mahalle’de birlikte sahaya çıkın.</p></div>
+          <div class="phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/feature-takim.jpg" width="750" height="1664" loading="lazy" alt="Takım sayfası, Maçlar sekmesi: turnuvalardaki maçlar ve sonuçlar"></div></div>
+          <div class="feature-copy"><h3>Takım kur</h3><p>Takımını oluştur veya başka takımlara katıl. Takım arkadaşlarınla sahada ortaya koyduğun mücadeleyi Mackolik’e taşı.</p></div>
         </article>
       </div>
     </div>
@@ -378,10 +374,10 @@ p { margin: 0; }
         <h2 id="sahalar-h">Sahan Mahalle’de, maçların Mackolik’te</h2>
       </div>
       <dl class="points">
-        <div><dt><b>01</b>Mackolik’te görünür ol</dt><dd>Tesisin, Mahalle’de maç kuran ve rakip arayan oyuncuların seçebileceği sahalar arasına girsin.</dd></div>
-        <div><dt><b>02</b>Maçlar kayda geçer</dt><dd>Sahanda oynanan maçlar skorları, kadroları ve istatistikleriyle Mahalle’de yerini alsın.</dd></div>
-        <div><dt><b>03</b>Videolar oyuncuya ulaşır</dt><dd>Kamera sistemi olan sahalarda gol videoları maç sayfasına ve oyuncuların profillerine otomatik olarak ulaşsın.</dd></div>
-        <div><dt><b>04</b>Lig ve turnuva düzenle</dt><dd>Lig ve turnuvalarını Mahalle üzerinden yönet; fikstürü oluştur, puan durumunu herkes takip etsin.</dd></div>
+        <div><dt><b>01</b>Mackolik’te görünür ol</dt><dd>Tesisin ve sahaların Mackolik’te kendine ait sayfayla yerini alsın. Milyonlarca Mackolik kullanıcısı tesisini keşfetsin.</dd></div>
+        <div><dt><b>02</b>Maçlarını kayda al</dt><dd>Sahanda oynanan maçlar, kuracağımız kamera sistemiyle baştan sona kaydedilsin. Maçlar Mackolik’te skor, istatistik ve video içerikleriyle yer alsın.</dd></div>
+        <div><dt><b>03</b>Oyuncuları tesisinle buluştur</dt><dd>Sahanda oynanan maçlar Mackolik’te yer aldıkça oyuncular kendi maçlarına, performanslarına ve videolarına ulaşabilsin. Tesisin, oyuncuların maç deneyiminin bir parçası haline gelsin.</dd></div>
+        <div><dt><b>04</b>Lig veya turnuva düzenle</dt><dd>Tesisinde düzenlediğin lig ve turnuvalar Mahalle’de yerini alsın. Organizasyonlarını Mackolik’te daha geniş bir kitleyle buluştur.</dd></div>
       </dl>
     </div>
   </section>
@@ -389,13 +385,13 @@ p { margin: 0; }
   <section id="basvuru" class="section" aria-labelledby="basvuru-h">
     <div class="wrap apply">
       <aside class="apply-side">
-        <span class="kicker">Ücretsiz başvuru</span>
-        <h2 id="basvuru-h">Halı sahanı Mahalle’ye ekle</h2>
-        <p>Tesisinizi Mahalle’ye eklemek için formu doldurun. Ekibimiz başvurunuzu inceleyip gerekli kontrollerin ardından tesisinizi yayına alsın.</p>
+        <span class="kicker">Başvuru</span>
+        <h2 id="basvuru-h">Halı saha başvurusu</h2>
+        <p>Tesisinizi Mahalle’ye dahil etmek için formu doldurun. Ekibimiz başvurunuzu inceleyip sizinle iletişime geçsin.</p>
         <ol class="steps">
-          <li><b>Formu gönderin.</b><span>Tesis, saha ve yetkili bilgilerinizi paylaşın.</span></li>
-          <li><b>Ekibimiz incelesin.</b><span>Gerekirse sizi telefonla arayalım.</span></li>
-          <li><b>Sahanız Mahalle’de.</b><span>Oyuncular maç kurarken tesisinizi seçebilsin.</span></li>
+          <li><b>Formu gönderin</b><span>Tesis, saha ve yetkili bilgilerinizi paylaşın.</span></li>
+          <li><b>Ekibimiz sizinle iletişime geçsin</b><span>Başvurunuzu inceleyelim, tesisiniz hakkında detayları konuşalım.</span></li>
+          <li><b>Tesisiniz Mahalle’de yerini alsın</b><span>Kamera sistemi kurulsun ve tesisinizde oynanan maçlar Mackolik’e taşınsın.</span></li>
         </ol>
       </aside>
 
