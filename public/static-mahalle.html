@@ -146,7 +146,7 @@ p { margin: 0; text-wrap: pretty; }
 .cam-head p { margin-top: 14px; font-size: 18px; color: var(--muted); }
 .stage { border-radius: 24px; overflow: hidden; background: #fff; border: 1px solid var(--line); }
 .stage-main { position: relative; background: radial-gradient(55% 60% at 50% 55%, #dde9fb 0%, #f4f6fa 70%); }
-.stage-main img { display: block; width: min(86%, 440px); margin: 0 auto; padding: 36px 0 24px; filter: drop-shadow(0 30px 34px rgba(11,39,82,.28)); }
+.stage-main img { display: block; width: min(70%, 360px); margin: 0 auto; padding: 36px 0 24px; filter: drop-shadow(0 30px 34px rgba(11,39,82,.28)); }
 .stage-lines { display: none; }
 .co { list-style: none; margin: 0; padding: 20px 20px 24px; display: grid; gap: 18px; }
 .co li { display: grid; grid-template-columns: 10px 1fr; column-gap: 14px; align-items: start; }
@@ -155,8 +155,8 @@ p { margin: 0; text-wrap: pretty; }
 .co p { margin-top: 3px; font-size: 14px; color: var(--muted); }
 @media (min-width: 640px) { .co { grid-template-columns: 1fr 1fr; padding: 24px 28px 28px; } }
 @media (min-width: 960px) {
-  .stage-main { aspect-ratio: 1100 / 560; }
-  .stage-main img { position: absolute; left: 50%; top: 50%; width: 46%; transform: translate(-50%, -50%); padding: 0; }
+  .stage-main { aspect-ratio: 1100 / 500; }
+  .stage-main img { position: absolute; left: 50%; top: 50%; width: 36%; transform: translate(-50%, -50%); padding: 0; }
   .stage-lines { display: block; position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
   .co { position: absolute; inset: 0; display: block; padding: 0; }
   .co li { position: absolute; width: 240px; display: block; }
@@ -337,15 +337,15 @@ p { margin: 0; text-wrap: pretty; }
       <div class="stage">
         <div class="stage-main">
           <img src="https://www.mackolik.com/static-files/mahalle/media/mahalle-kamera.webp" width="1386" height="960" loading="lazy" alt="Mahalle akıllı kamerası: mavi gövdeli, çift lensli saha kamerası">
-          <svg class="stage-lines" viewBox="0 0 1100 560" preserveAspectRatio="none" aria-hidden="true">
+          <svg class="stage-lines" viewBox="0 0 1100 500" preserveAspectRatio="none" aria-hidden="true">
             <g fill="none" stroke="var(--blue)" stroke-width="1.2" stroke-dasharray="3 4">
-              <path d="M300 112 L318 112 L337 290"/>
-              <path d="M300 404 L420 404 L449 312"/>
-              <path d="M800 112 L740 112 L702 245"/>
-              <path d="M800 404 L690 404 L611 322"/>
+              <path d="M300 104 L360 104 L384 258"/>
+              <path d="M300 344 L440 344 L471 276"/>
+              <path d="M800 104 L700 104 L669 217"/>
+              <path d="M800 344 L660 344 L598 283"/>
             </g>
             <g fill="#fff" stroke="var(--accent)" stroke-width="3">
-              <circle cx="337" cy="297" r="6"/><circle cx="449" cy="305" r="6"/><circle cx="702" cy="245" r="6"/><circle cx="611" cy="315" r="6"/>
+              <circle cx="384" cy="264" r="6"/><circle cx="471" cy="269" r="6"/><circle cx="669" cy="223" r="6"/><circle cx="598" cy="277" r="6"/>
             </g>
           </svg>
           <ol class="co">
