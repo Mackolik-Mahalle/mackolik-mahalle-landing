@@ -148,16 +148,12 @@ p { margin: 0; text-wrap: pretty; }
 .stage-main { position: relative; background: radial-gradient(55% 60% at 50% 55%, #dde9fb 0%, #f4f6fa 70%); }
 .stage-main img { display: block; width: min(86%, 440px); margin: 0 auto; padding: 36px 0 24px; filter: drop-shadow(0 30px 34px rgba(11,39,82,.28)); }
 .stage-lines { display: none; }
-.co { list-style: none; margin: 0; padding: 20px 20px 4px; display: grid; gap: 18px; }
+.co { list-style: none; margin: 0; padding: 20px 20px 24px; display: grid; gap: 18px; }
 .co li { display: grid; grid-template-columns: 10px 1fr; column-gap: 14px; align-items: start; }
 .co i { margin-top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(28,144,240,.18); }
 .co h3 { font-size: 17px; font-weight: 700; }
 .co p { margin-top: 3px; font-size: 14px; color: var(--muted); }
-.strip { display: grid; gap: 14px; align-items: center; padding: 18px 20px; border-top: 1px solid var(--line); background: var(--navy); color: rgba(255,255,255,.78); }
-.strip svg { display: block; width: 100%; max-width: 300px; height: auto; }
-.strip b { display: block; color: #fff; font-size: 16px; font-weight: 700; }
-.strip p { font-size: 14px; }
-@media (min-width: 640px) { .co { grid-template-columns: 1fr 1fr; padding: 24px 28px 8px; } .strip { grid-template-columns: 300px 1fr; gap: 28px; padding: 22px 28px; } }
+@media (min-width: 640px) { .co { grid-template-columns: 1fr 1fr; padding: 24px 28px 28px; } }
 @media (min-width: 960px) {
   .stage-main { aspect-ratio: 1100 / 560; }
   .stage-main img { position: absolute; left: 50%; top: 50%; width: 46%; transform: translate(-50%, -50%); padding: 0; }
@@ -170,7 +166,6 @@ p { margin: 0; text-wrap: pretty; }
   .co li:nth-child(2) { left: 5.5%; top: 62%; }
   .co li:nth-child(3) { right: 5.5%; top: 14%; text-align: right; }
   .co li:nth-child(4) { right: 5.5%; top: 62%; text-align: right; }
-  .strip { grid-template-columns: 300px 1fr; padding: 24px 40px; }
 }
 
 /* Journey */
@@ -359,27 +354,7 @@ p { margin: 0; text-wrap: pretty; }
             <li><i></i><div><h3>Analize hazır görüntü</h3><p>Kayıtlar; maç analizinin, istatistiklerin ve oyuncu kliplerinin kaynağı olur.</p></div></li>
           </ol>
         </div>
-        <div class="strip">
-          <svg viewBox="0 0 400 250" role="img" aria-labelledby="cam-map-t">
-              <title id="cam-map-t">Kuşbakışı saha: kenara kurulu çift lensli kamera, iki görüş alanıyla sahanın iki yarısını kaplıyor ve topu takip ediyor</title>
-              <rect x="10" y="10" width="380" height="200" rx="4" fill="#123a73" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/>
-              <g fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5">
-                <path d="M200 10v200"/><circle cx="200" cy="110" r="30"/>
-                <path d="M10 70h40v80H10M390 70h-40v80h40"/>
-              </g>
-              <path d="M200 232 L10 210 L10 10 L208 10 Z" fill="rgba(28,144,240,.28)"/>
-              <path d="M200 232 L192 10 L390 10 L390 210 Z" fill="rgba(142,200,255,.24)"/>
-              <path d="M200 232 L10 210 M200 232 L208 10 M200 232 L192 10 M200 232 L390 210" stroke="rgba(142,200,255,.7)" stroke-width="1" stroke-dasharray="4 4"/>
-              <path d="M150 150 C 190 120, 230 95, 268 82" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 5" opacity=".75"/>
-              <circle cx="268" cy="82" r="15" fill="none" stroke="#ffd34d" stroke-width="2"/>
-              <path d="M268 61v8M268 95v8M247 82h8M281 82h8" stroke="#ffd34d" stroke-width="2"/>
-              <circle cx="268" cy="82" r="5" fill="#fff"/>
-              <rect x="186" y="224" width="28" height="16" rx="4" fill="#5b9be8"/>
-              <circle cx="193" cy="232" r="3" fill="#0b2752"/><circle cx="207" cy="232" r="3" fill="#0b2752"/>
-            </svg>
-          <div><b>İki lens, bir saha</b><p>Her lens sahanın bir yarısını görür; ikisi birlikte sahanın tamamını kaplar. Sarı halka, takip edilen topu gösterir.</p></div>
-        </div>
-      </div>
+              </div>
     </div>
   </section>
 
