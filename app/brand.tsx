@@ -1,5 +1,4 @@
-// Wordmark and glyphs lifted from the Android app's vector drawables
-// (ic_mackolik_logo.xml, ic_arrow_back.xml, ic_share.xml, ic_play.xml).
+// Wordmark lifted from the Android app's vector drawable (ic_mackolik_logo.xml).
 
 export function MackolikLogo({ className, title = 'mackolik' }: { className?: string; title?: string }) {
   return (
@@ -10,31 +9,6 @@ export function MackolikLogo({ className, title = 'mackolik' }: { className?: st
       <path d="M66.53 6.04v-.19h-4.08l-4.64 5.51V.12h-3.41v19.45h3.41v-6.2l5.39 6.2h4.11v-.25l-6.4-7.01 5.62-6.26Z" />
       <path fillRule="evenodd" d="M67.64 12.72c0-3.92 2.74-7.15 7.13-7.15 4.39 0 7.21 3.23 7.21 7.15 0 3.95-2.71 7.15-7.18 7.15-4.47 0-7.16-3.2-7.16-7.15Zm3.41 0c0 2.09 1.26 4.04 3.75 4.04 2.49 0 3.75-1.95 3.75-4.03 0-2.06-1.46-4.06-3.75-4.06-2.46 0-3.75 2-3.75 4.06Z" />
       <path d="M84.32.12h3.39v19.45h-3.39zM90.69 5.79h3.41v13.77h-3.41zM90.39 1.98c0 2.64 4.02 2.64 4.02 0 0-2.64-4.02-2.64-4.02 0ZM103.6 12.3l5.62-6.26v-.19h-4.08l-4.64 5.51V.12h-3.41v19.45h3.41v-6.2l5.39 6.2H110v-.25l-6.4-7.01Z" />
-    </svg>
-  )
-}
-
-export function BackIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M15 4 7 12l8 8" />
-    </svg>
-  )
-}
-
-export function ShareIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden>
-      <circle cx="18" cy="5" r="3" /><circle cx="6" cy="12" r="3" /><circle cx="18" cy="19" r="3" />
-      <path d="m8.6 10.5 6.8-4M8.6 13.5l6.8 4" />
-    </svg>
-  )
-}
-
-export function PlayIcon({ size = 14 }: { size?: number }) {
-  return (
-    <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" aria-hidden>
-      <path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.4-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5Z" />
     </svg>
   )
 }

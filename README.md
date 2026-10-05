@@ -15,5 +15,7 @@ pnpm dev
 - **Görseller** `public/media/`: Figma'dan 3x alınmış ekranlar (`screen-*.jpg`) ve
   veritabanındaki `video_items` kayıtlarıyla aynı Sporyo maç kayıtlarından çekilmiş
   kareler (`frame-<maç id>-<saniye>.jpg`) ile 12 sn'lik `hero.mp4`.
-- **Kadro** ve **Videolar** ekranları uygulamada henüz bitmediği için `app/screens.tsx` içinde
-  HTML olarak çizildi; uygulama ekranları hazır olunca gerçek ekran görüntüleriyle değiştirin.
+- **Statik sayfa** `public/static-mahalle.html`: mackolik.com'da yayınlanan tek dosyalık HTML
+  (build yok, React yok; sadece form için küçük bir script). Görseller
+  `www.mackolik.com/static-files/mahalle/media/` altından gelir. Geliştirirken
+  `pnpm dev` ile `localhost:3000/static-mahalle.html` adresinden açılır. SEO notları `SEO-RAPORU.md`'de.

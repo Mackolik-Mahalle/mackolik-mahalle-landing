@@ -1,7 +1,6 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { SquadScreen, VideosScreen } from './screens'
 
 const TABS = [
   {
@@ -14,13 +13,13 @@ const TABS = [
     id: 'kadro', label: 'Kadro',
     title: 'Kadronu kur, sahaya diz',
     text: 'Takımındaki oyuncuları seç, pozisyonlarına yerleştir. Maça kimin geleceği maçtan önce belli olsun, eksik kalan mevki boş görünsün.',
-    screen: <SquadScreen />,
+    screen: <img src="/media/screen-squad.jpg" alt="Maç kadrosu ekranı: saha fotoğrafında numaralı oyuncular ve kadro listesi" />,
   },
   {
     id: 'videolar', label: 'Videolar',
     title: 'Golün videosu cebinde',
     text: 'Kamera sistemi olan sahalarda maç baştan sona kaydedilir. Goller ve öne çıkan anlar kısa videolara ayrılır, atan oyuncunun profiline düşer.',
-    screen: <VideosScreen />,
+    screen: <img src="/media/screen-videos.jpg" alt="Maç videoları ekranı: maçın tamamı ve oyuncu klipleri" />,
   },
   {
     id: 'profil', label: 'Oyuncu Profili',
