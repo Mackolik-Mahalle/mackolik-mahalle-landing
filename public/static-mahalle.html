@@ -112,11 +112,11 @@ p { margin: 0; text-wrap: pretty; }
 .hero .kicker { color: var(--sky); }
 .hero-lead { max-width: 520px; font-size: 18px; color: rgba(255,255,255,.86); }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-.hero-phone { display: none; }
+.hero-phone { width: 240px; margin: 8px auto 0; }
 .hero-credit { padding-bottom: 18px; font-size: 12px; color: rgba(255,255,255,.55); }
 @media (min-width: 900px) {
   .hero-grid { grid-template-columns: 1fr 300px; padding-top: 56px; padding-bottom: 72px; }
-  .hero-phone { display: block; }
+  .hero-phone { width: auto; margin: 0; }
 }
 
 /* Phone frame: screenshots are 750px wide app captures, cropped from the top */
@@ -310,7 +310,7 @@ p { margin: 0; text-wrap: pretty; }
         <a href="#yolculuk" class="btn btn--line">Nasıl çalışır?</a>
       </div>
     </div>
-    <div class="hero-phone phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/step-06-analiz.jpg" width="750" height="1946" alt="Mackolik uygulamasında analiz edilmiş Mahalle maçı: Sarıyer FC 3-0 Veltron, maç videosu ve olay akışı"></div></div>
+    <div class="hero-phone phone"><div class="screen"><img src="https://www.mackolik.com/static-files/mahalle/media/step-06-analiz.jpg" width="750" height="1946" fetchpriority="high" alt="Mackolik uygulamasında Mahalle maç detayı: Sarıyer FC 3-0 Veltron, halı saha maç videosu, goller, kartlar ve oyuncu değişiklikleri"></div></div>
   </div>
   <p class="wrap hero-credit">Görüntüler: Mahalle’ye bağlı bir halı sahanın maç kaydı.</p>
 </header>
