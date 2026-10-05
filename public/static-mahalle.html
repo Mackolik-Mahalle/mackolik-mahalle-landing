@@ -140,6 +140,22 @@ p { margin: 0; text-wrap: pretty; }
 .head h2 { font-size: clamp(30px, 4.2vw, 42px); font-weight: 700; margin-top: 10px; }
 .head p { margin-top: 14px; font-size: 18px; color: var(--muted); }
 
+/* Camera explainer: product shot + top-down coverage diagram, points on the right */
+.cam { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 960px) { .cam { grid-template-columns: 1fr 1fr; gap: 64px; } }
+.cam-visual { display: grid; gap: 16px; order: 2; }
+@media (min-width: 960px) { .cam-visual { order: 0; } }
+.cam-shot { position: relative; isolation: isolate; display: grid; place-items: center; padding: 32px 24px; border-radius: 20px; background: radial-gradient(60% 60% at 50% 50%, #dbe8fb 0%, var(--soft) 70%); }
+.cam-shot img { width: min(100%, 420px); filter: drop-shadow(0 24px 30px rgba(11,39,82,.25)); }
+.cam-map { border-radius: 16px; background: var(--navy); padding: 16px; }
+.cam-map svg { display: block; width: 100%; height: auto; }
+.cam-map figcaption { margin-top: 10px; font-size: 13px; color: rgba(255,255,255,.7); }
+.cam-points { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
+.cam-points li { display: grid; grid-template-columns: 44px 1fr; column-gap: 16px; }
+.cam-points b { grid-row: span 2; width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: #e8eef8; color: var(--blue); font-weight: 900; font-style: italic; }
+.cam-points h3 { font-size: 19px; font-weight: 700; }
+.cam-points p { margin-top: 4px; font-size: 15px; color: var(--muted); }
+
 /* Journey */
 .journey { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
 .step { display: grid; grid-template-columns: 112px 1fr; gap: 18px; align-items: start; }
@@ -286,6 +302,7 @@ p { margin: 0; text-wrap: pretty; }
 <nav class="nav" aria-label="Sayfa bölümleri">
   <div class="wrap nav-in">
     <div class="nav-links">
+      <a href="#kamera">Kamera</a>
       <a href="#yolculuk">Nasıl çalışır</a>
       <a href="#ozellikler">Neler var</a>
       <a href="#sahalar">Sahalar için</a>
@@ -297,6 +314,47 @@ p { margin: 0; text-wrap: pretty; }
 </nav>
 
 <main>
+  <section id="kamera" class="section" aria-labelledby="kamera-h">
+    <div class="wrap cam">
+      <div class="cam-visual">
+        <div class="cam-shot"><img src="https://www.mackolik.com/static-files/mahalle/media/mahalle-kamera.webp" width="693" height="480" loading="lazy" alt="Mahalle akıllı kamerası: mavi gövdeli, çift lensli saha kamerası"></div>
+        <figure class="cam-map" style="margin:0">
+            <svg viewBox="0 0 400 250" role="img" aria-labelledby="cam-map-t">
+              <title id="cam-map-t">Kuşbakışı saha: kenara kurulu çift lensli kamera, iki görüş alanıyla sahanın iki yarısını kaplıyor ve topu takip ediyor</title>
+              <rect x="10" y="10" width="380" height="200" rx="4" fill="#123a73" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/>
+              <g fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.5">
+                <path d="M200 10v200"/><circle cx="200" cy="110" r="30"/>
+                <path d="M10 70h40v80H10M390 70h-40v80h40"/>
+              </g>
+              <path d="M200 232 L10 210 L10 10 L208 10 Z" fill="rgba(28,144,240,.28)"/>
+              <path d="M200 232 L192 10 L390 10 L390 210 Z" fill="rgba(142,200,255,.24)"/>
+              <path d="M200 232 L10 210 M200 232 L208 10 M200 232 L192 10 M200 232 L390 210" stroke="rgba(142,200,255,.7)" stroke-width="1" stroke-dasharray="4 4"/>
+              <path d="M150 150 C 190 120, 230 95, 268 82" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="3 5" opacity=".75"/>
+              <circle cx="268" cy="82" r="15" fill="none" stroke="#ffd34d" stroke-width="2"/>
+              <path d="M268 61v8M268 95v8M247 82h8M281 82h8" stroke="#ffd34d" stroke-width="2"/>
+              <circle cx="268" cy="82" r="5" fill="#fff"/>
+              <rect x="186" y="224" width="28" height="16" rx="4" fill="#5b9be8"/>
+              <circle cx="193" cy="232" r="3" fill="#0b2752"/><circle cx="207" cy="232" r="3" fill="#0b2752"/>
+            </svg>
+          <figcaption>İki lens sahanın iki yarısını görür; sarı halka takip edilen topu gösterir.</figcaption>
+        </figure>
+      </div>
+      <div>
+        <div class="head" style="margin-bottom:32px">
+          <span class="kicker">Akıllı kamera sistemi</span>
+          <h2 id="kamera-h">Topu takip eden, sahayı iki gözle gören kamera</h2>
+          <p>Mahalle’nin anlaşmalı tesislere kurduğu kamera, maçı baştan sona kendi kaydeder. Kamera başında kimsenin durmasına gerek yok.</p>
+        </div>
+        <ol class="cam-points">
+          <li><b>01</b><h3>Çift lens, tüm saha</h3><p>İki lensli yapısıyla sahanın iki yarısını aynı anda görür; maçın tamamı tek kayıtta kadraja girer.</p></li>
+          <li><b>02</b><h3>Top takibi</h3><p>Görüntü işleme topu anlık olarak izler; kayıt, aksiyonun olduğu yere odaklanır.</p></li>
+          <li><b>03</b><h3>Otomatik kayıt</h3><p>Maç başladığında kayıt başlar, son düdükten sonra video Mahalle’ye aktarılır.</p></li>
+          <li><b>04</b><h3>Analize hazır görüntü</h3><p>Kayıtlar; maç analizinin, detaylı istatistiklerin ve oyuncu kliplerinin kaynağı olur.</p></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
   <section id="yolculuk" class="section" aria-labelledby="yolculuk-h">
     <div class="wrap">
       <div class="head">

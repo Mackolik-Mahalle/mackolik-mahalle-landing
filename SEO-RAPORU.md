@@ -35,7 +35,7 @@ Not: Google 2023'ten beri FAQ zengin sonucunu yalnızca resmi sağlık ve devlet
 5. **Sunucuya yüklenecek görseller.** Sayfadaki tüm görseller `static-files/mahalle/media/` altından geliyor.
    Şu dosyalar henüz sunucuda yok; yüklenene kadar sayfada boş görünür (hepsi repoda `public/media/`):
    `mackolik-mahalle-logo.svg`, `step-01-profil.jpg` … `step-08-videolar.jpg` (8 dosya),
-   `feature-profil.jpg`, `feature-takim.jpg`.
+   `feature-profil.jpg`, `feature-takim.jpg`, `mahalle-kamera.webp`.
    Kart arka planları CSS ile çiziliyor (degrade + saha çizgileri), görsel dosyası gerektirmiyor.
 6. **AI tarayıcıları.** `robots.txt` GPTBot, Google-Extended, CCBot ve anthropic-ai'yi engelliyor.
    Sayfa bu yüzden yapay zekâ asistanlarının cevaplarında çıkmaz. Bu bilinçli bir kararsa sorun yok.
