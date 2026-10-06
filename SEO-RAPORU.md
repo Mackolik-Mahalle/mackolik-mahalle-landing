@@ -33,8 +33,10 @@ Not: Google 2023'ten beri FAQ zengin sonucunu yalnızca resmi sağlık ve devlet
 4. **Search Console.** Yayından sonra URL denetimi ile dizine eklenmesini isteyin.
    Zengin sonuç testinde JSON-LD'yi doğrulayın.
 5. **Sunucuya yüklenecek görseller.** Sayfadaki tüm görseller `static-files/mahalle/media/` altından geliyor.
-   Bento kartlarındaki iki yeni ekran henüz sunucuda yok; yüklenene kadar sayfada boş görünür:
-   `screen-profile-matches.jpg`, `screen-team-squad.jpg` (repoda `public/media/`).
+   Şu dosyalar henüz sunucuda yok; yüklenene kadar sayfada boş görünür (hepsi repoda `public/media/`):
+   `mackolik-mahalle-logo.svg`, `step-01-profil.jpg` … `step-08-videolar.jpg` (8 dosya),
+   `feature-profil.jpg`, `feature-takim.jpg`, `mahalle-kamera.webp`,
+   `hero-saha.mp4` (arka plan videosu), `hero-saha-poster.jpg` (videonun ilk karesi, OG görseli).
    Kart arka planları CSS ile çiziliyor (degrade + saha çizgileri), görsel dosyası gerektirmiyor.
 6. **AI tarayıcıları.** `robots.txt` GPTBot, Google-Extended, CCBot ve anthropic-ai'yi engelliyor.
    Sayfa bu yüzden yapay zekâ asistanlarının cevaplarında çıkmaz. Bu bilinçli bir kararsa sorun yok.
